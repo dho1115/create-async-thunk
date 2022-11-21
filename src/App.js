@@ -4,6 +4,9 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 
 function App() {
+  //https://www.youtube.com/watch?v=Oc14xbizA2o
+  //14:27.
+
   return (
     <div className="App">
       <header className="App-header">

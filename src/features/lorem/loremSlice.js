@@ -12,11 +12,9 @@ const initialState = {
 export const getLorem = createAsyncThunk('lorem/getData', async (arg, {rejectWithValue}) => {
     var result;
     try {
-        const { data } = await axios.get('https://baconipsum.com/api/?type=meat-and-filler')
+        const { data } = await axios.get('https://baconipsum.com/api/?type=meat-and-filler') //This is the async function.
 
-        console.log({ data })
-
-        return data;
+        return data; //You MUST 'return' some data or it will return 'undefined'.
     } catch (err) {
         rejectWithValue(err.response.data)
     }

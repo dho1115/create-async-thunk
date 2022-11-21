@@ -36,6 +36,8 @@ const loremSlice = createSlice({
             state.isSuccess = true;
 
             console.log({ result: "SUCCESS!!!", loading: state.loading, data: state.data, state, payload })
+
+            return state
         },
         [getLorem.rejected]: (state, { payload }) => {
             state.loading = false;

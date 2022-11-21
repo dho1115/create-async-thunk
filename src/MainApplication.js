@@ -10,7 +10,7 @@ import { getLorem } from './features/lorem/loremSlice';
 
 const MainApplication = () => {
     //https://www.youtube.com/watch?v=Oc14xbizA2o
-    //16:05.
+    //16:25.
 
     const dispatch = useDispatch();
 

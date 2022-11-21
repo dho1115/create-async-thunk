@@ -28,21 +28,21 @@ const loremSlice = createSlice({
     extraReducers: {
         [getLorem.pending]: (state, { payload }) => {
             state.loading = true;
-            console.log({ result: "pending", loading: state.loading })
+            console.log({ result: "pending", loading: state.loading, state })
         },
         [getLorem.fulfilled]: (state, { payload }) => {
             state.loading = false;
             state.data = payload;
             state.isSuccess = true;
 
-            console.log({ result: "SUCCESS!!!", loading: state.loading, data: state.data })
+            console.log({ result: "SUCCESS!!!", loading: state.loading, data: state.data, state, payload })
         },
         [getLorem.rejected]: (state, { payload }) => {
             state.loading = false;
             state.isSuccess = false;
             state.message = payload;
 
-            console.log({ result: "ERROR!!!", loading: state.loading, message: state.message })
+            console.log({ result: "ERROR!!!", loading: state.loading, message: state.message, state })
         }
     }
 })

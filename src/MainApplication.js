@@ -20,7 +20,7 @@ const MainApplication = () => {
     useEffect(() => {
         dispatch(getLorem())
             .then(result => setapiData([...apiData, ...result.payload]))
-            .catch(err => console.error({ err, errorCode: err.code, errorMessage: err.message }));
+            .catch(err => console.error({ err, errorCode: err.code, errorMessage: err.message })); //This is how you retrieve the API data. The data is in result.payload.
       return () => {
         
       };
@@ -40,7 +40,7 @@ const MainApplication = () => {
                 <h3>API DATA</h3>
                 {
                     apiData.map((val, ind) => (
-                        <h3 key={ind} style={{ color: ind%2== 1 ? 'fuchsia': 'black' }}>{val}.</h3>
+                        <h3 key={ind} style={{ color: ind%2=== 1 ? 'fuchsia': 'black' }}>{val}.</h3>
                     ))
                 }
             </section>

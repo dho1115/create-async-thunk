@@ -10,7 +10,6 @@ const initialState = {
 
 //=========== createAsyncThunk ===========
 export const getLorem = createAsyncThunk('lorem/getData', async (arg, {rejectWithValue}) => {
-    var result;
     try {
         const { data } = await axios.get('https://baconipsum.com/api/?type=meat-and-filler') //This is the async function.
 
@@ -30,7 +29,8 @@ const loremSlice = createSlice({
             state.loading = true;
             console.log({ result: "pending", loading: state.loading, state })
         },
-        [getLorem.fulfilled]: (state, { payload }) => {
+        //The keys here (e.g.: 'lorem/getData/fulfilled') is pretty much the same as the 'case' names for the switch/case. So here, it would be case 'lorem/getData/fulfilled': [ code goes here ] return state.
+        'lorem/getData/fulfilled': (state, { payload }) => {
             state.loading = false;
             state.data = payload;
             state.isSuccess = true;
